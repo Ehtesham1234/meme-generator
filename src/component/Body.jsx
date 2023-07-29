@@ -7,7 +7,7 @@ export default function Body() {
     randomImages: "https://api.imgflip.com/get_memes",
   });
   const [allMemes, setAllMemes] = useState([]);
-  React.useEffect(() => {
+  useEffect(() => {
     async function getMemes() {
       const res = await fetch("https://api.imgflip.com/get_memes");
       const data = await res.json();
@@ -64,7 +64,6 @@ export default function Body() {
     </main>
   );
 }
-
 
 // import React, { useState, useEffect } from "react";
 // import { useSelector, useDispatch } from "react-redux";

@@ -1,49 +1,3 @@
-// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import axios from "axios";
-
-// const initialState = {
-//   url: "",
-// };
-
-// export const getMemes = createAsyncThunk(
-//   "memes/getUser",
-//   async (userId, thunkAPI) => {
-//     const { data } = await axios.get(
-//       `https://api.imgflip.com/get_memes/${userId}`
-//     );
-//     return data.url;
-//   }
-// );
-
-// export const memeSlice = createSlice({
-//   name: "memes",
-//   initialState,
-
-//   reducers: {
-//     showMemes: (state, action) => {
-//       state.url = action.payload;
-//     },
-//   },
-
-//   extraReducers: (builder) => {
-//     builder
-//       .addCase(getMemes.fulfilled, (state, action) => {
-//         state.url = action.payload;
-//         state.pending = false;
-//       })
-//       .addCase(getMemes.pending, (state, action) => {
-//         state.pending = true;
-//       })
-//       .addCase(getMemes.rejected, (state, action) => {
-//         state.error = action.error;
-//       });
-//   },
-// });
-
-// export const { showMemes } = memeSlice.actions;
-
-// export default memeSlice.reducer;
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -58,7 +12,7 @@ export const getMemes = createAsyncThunk("memes/getUser", async () => {
   return data.data.memes;
 });
 
-export const memeSlice = createSlice({
+export const memesReducer = createSlice({
   name: "memes",
   initialState,
 
